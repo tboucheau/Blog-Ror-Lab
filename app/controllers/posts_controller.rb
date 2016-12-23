@@ -15,5 +15,6 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
         post_params = params.require(:post).permit(:name, :content)
         @post.update(post_params)
+        redirect_to post_path
     end
 end
