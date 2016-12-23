@@ -17,4 +17,8 @@ class PostsController < ApplicationController
         @post.update(post_params)
         redirect_to post_path
     end
+
+    def new
+        @post = Post.new
+    end
 end
