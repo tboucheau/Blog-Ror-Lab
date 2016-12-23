@@ -22,6 +22,7 @@ class CategoriesController < ApplicationController
     end
 
     def create
+        category = Category.create(post_params)
         redirect_to categories_path
     end
     def destroy
