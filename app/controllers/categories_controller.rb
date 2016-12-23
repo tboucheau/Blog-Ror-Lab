@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
 
     def create
         @category = Category.create(category_params)
-        redirect_to category_path(@category.id)
+        redirect_to categories_path
     end
     def destroy
         @category = Category.find(params[:id])
