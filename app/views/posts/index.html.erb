@@ -6,7 +6,10 @@
     <h2><%= post.name %></h2>
 
     <p><%= post.content %></p>
-    <p>Catégorie : <%= post.category.name %></p>
+
+    <% if post.category %>
+        <p>Catégorie : <%= post.category.name %></p>
+    <% end %>
     <p>
         <a href="<%= post_path(post.id)%>" class="btn btn-primary">Lire la suite</a>
         <a href="<%= edit_post_path(post.id)%>" class="btn btn-warning">Editer</a>
