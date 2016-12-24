@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 
     def update
         @post.update(post_params)
+        session[:success] = "Artcle modifié avec succès"
         redirect_to posts_path
     end
 
