@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
 
 
     def index
-        @user_id = session[:user_id]
+        @session = session[:user_id]
         @categories = Category.all
     end
 
