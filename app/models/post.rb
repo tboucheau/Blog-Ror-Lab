@@ -3,6 +3,7 @@ class Post < ApplicationRecord
     include Sluggable
 
     belongs_to :category, counter_cache: true
+    has_and_belongs_to_many :tags
 
     default_scope {order(created_at: :desc)} #sera executé partout
 
