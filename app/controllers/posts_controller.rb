@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     before_action :set_posts, only: [:update, :edit, :show, :destroy]
 
     def index
+        session[:user_id] = 4
         @posts = Post.all
     end
 
