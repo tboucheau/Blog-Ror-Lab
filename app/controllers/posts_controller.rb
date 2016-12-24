@@ -6,6 +6,11 @@ class PostsController < ApplicationController
     def index
         #flash.now[:success] = "Salut" --affiche un message flash sur la session en cours uniquement (ex : alerte promotion)
         @posts = Post.all
+        respond_to do |format|
+            format.html
+            format.json { render json: @posts }
+        end
+
     end
 
     def show
