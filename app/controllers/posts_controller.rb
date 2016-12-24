@@ -20,8 +20,11 @@ class PostsController < ApplicationController
     end
 
     def update
-        @post.update(post_params)
-        redirect_to posts_path, success: "Article modifié avec succès"
+        if @post.update(post_params)
+            redirect_to posts_path, success: "Article modifié avec succès"
+        else
+            render 'edit'
+        end
     end
 
     def new
