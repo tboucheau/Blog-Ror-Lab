@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     before_action :set_posts, only: [:update, :edit, :show, :destroy]
 
     def index
-        #flash.now[:success] = "Salut"
+        #flash.now[:success] = "Salut" --affiche un message flash sur la session en cours uniquement (ex : alerte promotion)
         @posts = Post.all
     end
 
