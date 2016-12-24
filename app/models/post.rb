@@ -2,7 +2,7 @@ class Post < ApplicationRecord
 
     validates :name, presence: true
     before_validation :default_slug
-    validates :slug, format: { with: /\A[a-z0-9\-]+\z/ }
+    validates :slug, format: { with: /\A[a-z0-9\-]+\z/ }, uniqueness: true
 
     private
     def default_slug
