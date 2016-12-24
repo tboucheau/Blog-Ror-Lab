@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
     def index
         #flash.now[:success] = "Salut" --affiche un message flash sur la session en cours uniquement (ex : alerte promotion)
-        @posts = Post.online(0).alpha.all
+        @posts = Post.online(0).alpha.includes(:category, :tags).all
 
         #@posts = Post.published(0).alpha.rewhere(online: 0).all --écrase le scope published pour afficher les offline
 
