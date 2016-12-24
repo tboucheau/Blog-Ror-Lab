@@ -1,5 +1,7 @@
 class Category < ApplicationRecord
+
     include Sluggable
-    before_validation :set_default_slug
+    validates :name, presence: true
+    validates :slug, format: { with: /\A[a-z0-9\-]+\z/ }, uniqueness: true
 
 end

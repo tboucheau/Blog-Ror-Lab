@@ -1,5 +1,13 @@
 <h1>Editer la catégorie</h1>
 
+<% if @category.errors.any? %>
+<div class="alert alert-danger">
+    <% @category.errors.full_messages.each do |message| %>
+        <%= message %>
+    <% end %>
+</div>
+<% end %>
+
 <%= form_for @category do |f| %>
 <div class="form-group">
     <%= f.text_field :name, placeholder: 'Nom', class: 'form-control' %>
