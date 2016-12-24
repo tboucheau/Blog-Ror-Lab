@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
     private
     def default_slug
-        if !self.name.emtpy? && self.slug.empty?
+        if !self.name.empty? && self.slug.empty?
             self.slug = name.parameterize
         end
     end
