@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     before_action :set_posts, only: [:update, :edit, :show, :destroy]
 
     def index
-        session[:user_id] = 4
+        flash.now[:success] = "Salut"
         @posts = Post.all
     end
 
@@ -16,8 +16,7 @@ class PostsController < ApplicationController
 
     def update
         @post.update(post_params)
-        session[:success] = "Artcle modifié avec succès"
-        redirect_to posts_path
+        redirect_to posts_path, success: "Article modifié avec succès"
     end
 
     def new
@@ -26,12 +25,12 @@ class PostsController < ApplicationController
 
     def create
         post = Post.create(post_params)
-        redirect_to post_path(post.id)
+        redirect_to post_path(post.id), success: "Article créé avec succès"
     end
 
     def destroy
         @post.destroy
-        redirect_to posts_path
+        redirect_to posts_path, success: "Article supprimé avec succès"
     end
 
     private
