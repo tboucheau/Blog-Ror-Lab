@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
 
     def update
         @category.update(category_params)
-        redirect_to category_path(@category.id)
+        redirect_to category_path(@category.id), success: "Catégorie modifiée avec succès"
     end
     def new
         @category = Category.new
@@ -24,12 +24,12 @@ class CategoriesController < ApplicationController
 
     def create
         @category = Category.create(category_params)
-        redirect_to categories_path
+        redirect_to categories_path, success: "Catégorie créée avec succès"
     end
     def destroy
         @category = Category.find(params[:id])
         @category.destroy
-        redirect_to categories_path
+        redirect_to categories_path, success: "Catégorie supprimée avec succès"
     end
 
     private
