@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
     default_scope {order(created_at: :desc)} #sera executé partout
 
-    scope :published, -> (online) {where(online: 1)} do
+    scope :published, -> (online) {where(published: 1)} do
         where(published: online) if online.is_a? Integer
     end
 
