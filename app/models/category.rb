@@ -5,4 +5,5 @@ class Category < ApplicationRecord
     validates :slug, format: { with: /\A[a-z0-9\-]+\z/ }, uniqueness: true
 
     has_many :posts
+    has_many :meta, as: :metaable
 end
