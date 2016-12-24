@@ -8,7 +8,7 @@ class PostsController < ApplicationController
         @posts = Post.all
         respond_to do |format|
             format.html
-            format.json { render json: @posts }
+            format.json { render json: @posts.as_json(only: [:name, :created_at, :id]) }
         end
 
     end
