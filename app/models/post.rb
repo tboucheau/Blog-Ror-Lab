@@ -4,7 +4,7 @@ class Post < ApplicationRecord
 
     belongs_to :category, counter_cache: true
     has_and_belongs_to_many :tags
-    has_many :meta, as: :metaable
+    has_many :metas, as: :metaable
 
     default_scope {order(created_at: :desc)} #sera executé partout
 
