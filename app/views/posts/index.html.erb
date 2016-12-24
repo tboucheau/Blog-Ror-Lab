@@ -11,11 +11,13 @@
         <p>Catégorie : <%= post.category.name %></p>
     <% end %>
 
+    <% if !post.tags.empty? %>
     <p>Tags :
         <%= post.tags.each do |tag| %>
             <%= tag.name %>
         <% end %>
     </p>
+    <% end %>
 
     <p>
         <a href="<%= post_path(post.id)%>" class="btn btn-primary">Lire la suite</a>
