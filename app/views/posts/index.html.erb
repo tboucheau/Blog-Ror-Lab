@@ -10,6 +10,13 @@
     <% if post.category %>
         <p>Catégorie : <%= post.category.name %></p>
     <% end %>
+
+    <p>Tags :
+        <%= post.tags.each do |tag| %>
+            <%= tag.name %>
+        <% end %>
+    </p>
+
     <p>
         <a href="<%= post_path(post.id)%>" class="btn btn-primary">Lire la suite</a>
         <a href="<%= edit_post_path(post.id)%>" class="btn btn-warning">Editer</a>
