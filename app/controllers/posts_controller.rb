@@ -5,7 +5,10 @@ class PostsController < ApplicationController
 
     def index
         #flash.now[:success] = "Salut" --affiche un message flash sur la session en cours uniquement (ex : alerte promotion)
-        @posts = Post.all
+        @posts = Post.published(1).alpha.all
+
+        #@posts = Post.published(0).alpha.rewhere(online: 0).all --écrase le scope published pour afficher les offline
+
         respond_to do |format|
             format.html
             format.json { render json: @posts.as_json(only: [:name, :created_at, :id]) }
