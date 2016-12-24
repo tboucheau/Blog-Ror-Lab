@@ -2,6 +2,8 @@ class Post < ApplicationRecord
 
     include Sluggable
 
+    belongs_to :category
+
     default_scope {order(created_at: :desc)} #sera executé partout
 
     scope :published, -> (online) {where(online: 1)} do
