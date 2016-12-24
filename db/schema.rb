@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161223223947) do
+ActiveRecord::Schema.define(version: 20161224010556) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20161223223947) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.text     "content",    limit: 4294967295
+    t.string   "slug"
   end
 
 end
