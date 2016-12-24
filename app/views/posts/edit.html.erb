@@ -1,6 +1,6 @@
 <h1>Editer l'article</h1>
 
-<% if @post.invalid? %>
+<% if @post.errors.any? %>
 <div class="alert alert-danger">
     <% @post.errors.full_messages.each do |message| %>
         <%= message %>
