@@ -1,5 +1,12 @@
 <h1>Editer l'article</h1>
 
+<% if @post.invalid? %>
+<div class="alert alert-danger">
+    <% @posts.errors.full_messages.each do |message| %>
+    <%= message %>
+</div>
+<% end %>
+
 <%= form_for @post do |f| %>
 
     <div class="form-group">
