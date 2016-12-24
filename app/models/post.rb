@@ -2,7 +2,7 @@ class Post < ApplicationRecord
 
     include Sluggable
 
-    belongs_to :category
+    belongs_to :category, counter_cache: true
 
     default_scope {order(created_at: :desc)} #sera executé partout
 
