@@ -2,7 +2,7 @@ module Sluggable
     extend ActiveSupport::Concern
 
     included do
-        before_validation :default_slug, on: [:create, :update], if: '!slug.nil?'
+        before_validation :set_default_slug, on: [:create, :update], if: '!slug.nil?'
 
 
         private
