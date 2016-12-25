@@ -1,3 +1,5 @@
 <h1>Editer l'article</h1>
 
+<%= url_for(controller: 'posts', action: 'index', host: 'localhost.dev', port: 80) %>
+
 <%= render 'form', item: @post %>
