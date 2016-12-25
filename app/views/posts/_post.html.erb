@@ -13,6 +13,7 @@
     <% end %>
 
     <p>
+       <% link_to('Lire la suite', @post, class: 'btn btn-primary') %>
         <a href="<%= post_path(post.id)%>" class="btn btn-primary">Lire la suite</a>
         <a href="<%= edit_post_path(post.id)%>" class="btn btn-warning">Editer</a>
         <a href="<%= post_path(post.id)%>" class="btn btn-danger" data-confirm="Etes-vous sur ?" data-method="DELETE">Supprimer</a>
