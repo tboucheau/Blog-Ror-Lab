@@ -7,11 +7,9 @@
     <% end %>
 
     <% if !post.tags.empty? %>
-    <p>Tags :
-        <%= post.tags.each do |tag| %>
-            <%= tag.name %>
-        <% end %>
-    </p>
+        <p>Tags :
+            <%= post.tags.map(&:name).join(', ') %>
+        </p>
     <% end %>
 
     <p>
