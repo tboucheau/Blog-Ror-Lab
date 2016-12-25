@@ -1,21 +1,21 @@
-    <h2><%= item.name %></h2>
+    <h2><%= post.name %></h2>
 
-    <p><%= item.content %></p>
+    <p><%= post.content %></p>
 
-    <% if item.category %>
-        <p>Catégorie : <%= item.category.name %></p>
+    <% if post.category %>
+        <p>Catégorie : <%= post.category.name %></p>
     <% end %>
 
-    <% if !item.tags.empty? %>
+    <% if !post.tags.empty? %>
     <p>Tags :
-        <%= item.tags.each do |tag| %>
+        <%= post.tags.each do |tag| %>
             <%= tag.name %>
         <% end %>
     </p>
     <% end %>
 
     <p>
-        <a href="<%= post_path(item.id)%>" class="btn btn-primary">Lire la suite</a>
-        <a href="<%= edit_post_path(item.id)%>" class="btn btn-warning">Editer</a>
-        <a href="<%= post_path(item.id)%>" class="btn btn-danger" data-confirm="Etes-vous sur ?" data-method="DELETE">Supprimer</a>
+        <a href="<%= post_path(post.id)%>" class="btn btn-primary">Lire la suite</a>
+        <a href="<%= edit_post_path(post.id)%>" class="btn btn-warning">Editer</a>
+        <a href="<%= post_path(post.id)%>" class="btn btn-danger" data-confirm="Etes-vous sur ?" data-method="DELETE">Supprimer</a>
     </p>
