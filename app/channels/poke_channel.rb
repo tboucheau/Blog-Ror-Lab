@@ -7,7 +7,7 @@ class PokeChannel < ApplicationCable::Channel
         # Any cleanup needed when channel is unsubscribed
     end
 
-    def poke
+    def poke(data)
         ActionCable.server.broadcast('poke', {})
     end
 end
