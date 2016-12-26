@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-    get '/messages', 'messages#index'
+    get '/messages', to: 'messages#index'
     root to: 'pages#home'
     resources :posts
     resources :categories
