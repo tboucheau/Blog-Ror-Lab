@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
     end
 
     def demo
-        ActionCable.server.broadcast('demo', {content: 'salut'})
+        ActionCable.server.broadcast('demo', {content: 'Salut'})
     end
 
 end
