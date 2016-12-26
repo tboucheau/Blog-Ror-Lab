@@ -7,12 +7,13 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
             event.preventDefault()
     # Called when the subscription is ready for use on the server
 
-  disconnected: ->
+disconnected: ->
     # Called when the subscription has been terminated by the server
 
-  received: (data) ->
-        $('#messages').append(data.message)
+received: (data) ->
+    $('#messages').append(data.message)
     # Called when there's incoming data on the websocket for this channel
 
-    speak: (message) ->
+# methode pour envoyer des messages
+speak: (message) ->
         @perform 'speak', {message: message}
