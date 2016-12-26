@@ -14,5 +14,5 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
         $('#messages').append(data.message)
     # Called when there's incoming data on the websocket for this channel
 
-    speak: (messages) ->
+    speak: (message) ->
         @perform 'speak', {message: message}
