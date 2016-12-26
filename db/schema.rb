@@ -10,19 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161224010556) do
+ActiveRecord::Schema.define(version: 20161224093800) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "name"
-    t.string "slug"
+    t.string  "name"
+    t.string  "slug"
+    t.integer "posts_count", default: 0
+  end
+
+  create_table "meta", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string  "name"
+    t.string  "metaable_type"
+    t.integer "metaable_id"
+    t.index ["metaable_type", "metaable_id"], name: "index_meta_on_metaable_type_and_metaable_id", using: :btree
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.text     "content",    limit: 4294967295
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.text     "content",     limit: 4294967295
     t.string   "slug"
+    t.boolean  "online",                         default: false
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_posts_on_category_id", using: :btree
   end
 
+  create_table "posts_tags", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer "post_id", null: false
+    t.integer "tag_id",  null: false
+    t.index ["post_id", "tag_id"], name: "index_posts_tags_on_post_id_and_tag_id", using: :btree
+    t.index ["tag_id", "post_id"], name: "index_posts_tags_on_tag_id_and_post_id", using: :btree
+  end
+
+  create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "name"
+  end
+
+  add_foreign_key "posts", "categories"
 end
