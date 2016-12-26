@@ -8,6 +8,6 @@ class PokeChannel < ApplicationCable::Channel
     end
 
     def poke
-        ActionCable.server.broadcast('poke')
+        ActionCable.server.broadcast('poke', {})
     end
 end
