@@ -83,4 +83,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Configuration pour gérer les images_tag et autres tags à partir d'un domaine externe (comme un cdn) - uniquement en production
+  #config.action_controller.asset_host = 'cdn.monsuperdomaine.fr'
+
 end
