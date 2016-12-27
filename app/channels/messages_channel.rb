@@ -7,6 +7,6 @@ class MessagesChannel < ApplicationCable::Channel
         partial_message = ApplicationController.render(partial: 'messages/message', locals: {
             message: data['message']
             })
-        ActionCable.server.broadcast 'messages', message: partial_message
+        ActionCable.server.broadcast 'messages', message: data['message']
     end
 end
