@@ -2,7 +2,7 @@ class ContactMailer < ApplicationMailer
 
     def contact(post)
         @post = post
-        mail(to: 'yop@yopmail.com', subject: 'sujet de test')
+        mail(from:'site@rubyonrails.fr', to: 'opposite240@gmail.com', subject: 'sujet de test')
     end
 
 end
