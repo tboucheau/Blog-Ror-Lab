@@ -11,6 +11,6 @@ disconnected: ->
     # Called when the subscription has been terminated by the server
 
 received: (data) ->
-    $('#messages').append(data.message)
-    alert('poke')
+    #$('#messages').append(data.message)
+    alert('Poke !')
 
