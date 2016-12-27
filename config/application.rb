@@ -13,5 +13,9 @@ module Blog
     # -- all .rb files in that directory are automatically loaded.
       config.autoload_paths << "#{Rails.root}/app/models/validators"
       config.generators.helper = false
+
+      config.action_mailer.default_url_options = {
+          host: 'http://ror.appcaze.fr'
+          }
   end
 end
