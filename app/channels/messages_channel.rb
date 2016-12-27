@@ -4,6 +4,6 @@ class MessagesChannel < ApplicationCable::Channel
     end
 
     def speak(data)
-      ActionCable.server.broadcast('messages', {'azeazeza'})
+      ActionCable.server.broadcast('messages', {})
     end
 end
