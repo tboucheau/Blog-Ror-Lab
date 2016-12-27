@@ -11,7 +11,7 @@ disconnected: ->
     # Called when the subscription has been terminated by the server
 
 received: (data) ->
-    alert(data.message)
+    $('#messages').append(data.message)
 
 speak: (message) ->
     this.perform('speak', {message: message})
