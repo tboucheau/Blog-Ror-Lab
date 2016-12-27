@@ -5,7 +5,6 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
             @perform 'speak', {message: message}
             event.target.value = ""
             event.preventDefault()
-    # Called when the subscription is ready for use on the server
 
 disconnected: ->
     # Called when the subscription has been terminated by the server
