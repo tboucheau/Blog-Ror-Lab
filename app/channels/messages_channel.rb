@@ -4,9 +4,9 @@ class MessagesChannel < ApplicationCable::Channel
     end
 
     def speak(data)
-        message = ApplicationController.render(partial: 'messages/message', locals: {
+        partial_message = ApplicationController.render(partial: 'messages/message', locals: {
             message: data['message']
             })
-        ActionCable.server.broadcast 'messages', message: message
+        ActionCable.server.broadcast 'messages', message: partial_message
     end
 end
