@@ -2,7 +2,7 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
   connected: ->
     $(document).on 'keypress', '#message', (event) =>
         if event.keyCode is 13
-            @perform 'speak', {message: message}
+            @perform 'speak', {message: data.message}
             event.target.value = ""
             event.preventDefault()
 
