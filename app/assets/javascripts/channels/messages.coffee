@@ -12,4 +12,5 @@ disconnected: ->
 
 received: (data) ->
     $('#messages').append(data.message)
+    alert('poke')
 
