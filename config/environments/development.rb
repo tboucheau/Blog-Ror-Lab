@@ -56,7 +56,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       address:              'smtp.sfr.fr',
       port:                 587,
-      domain:               'sfr.fr',
+      #domain:               'sfr.fr',
       user_name:            'boucheau.tony@neuf.fr',
       password:             'vn7t5j',
       authentication:       'plain',
